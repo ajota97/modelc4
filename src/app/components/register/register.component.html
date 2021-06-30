@@ -1,0 +1,38 @@
+<div class="alert alert-danger col-md-6 offset-md-3 mt-3" *ngIf="error">
+    {{message}}
+</div>
+
+<form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1>Registro</h1>
+    <div class="inset">
+
+        <p>
+            <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname" #fullname="ngModel" [(ngModel)]="user.fullname" required>
+            <small *ngIf="!fullname.valid && fullname.touched" class="invalid-feedback d-block">
+                El nombre es necesario.
+                </small>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" #email="ngModel" [(ngModel)]="user.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">
+                El email no es válido.
+                </small>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" #password="ngModel" [(ngModel)]="user.password" required>
+            <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">
+                La contraseña no puede estar vacia.
+                </small>
+        </p>
+
+    </div>
+    <p class="p-container">
+
+        <button class="btn btn-info" type="submit" style="color: white; margin-right: 5px;" [disabled]="registerForm.invalid">Aceptar</button>
+        <button class="btn btn-danger ml-4" [routerLink]="['/login']"> Cancelar</button>
+
+    </p>
+</form>

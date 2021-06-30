@@ -1,0 +1,29 @@
+<div class="col-lg-12 mt-7 ml-5" *ngIf="!saved">
+    <img src="https://acegif.com/wp-content/uploads/loading-25.gif">
+</div>
+
+<div class="col-lg-12 mt-3" *ngIf="saved" style="color: aliceblue;">
+    <h1>Saved Project</h1>
+    <hr>
+
+    <ul class="list-group list-save">
+        <li class="list-group-item list-group-item-dark" *ngFor="let save of saved">
+            <h4>
+                <a style="color: black ;cursor: pointer;" (click)="sendCoord(save.coord,save.link)">{{save.name}} </a>
+
+            </h4>
+
+            <span class="badge badge-dark "> 
+                {{save.date | date: 'medium'}}
+             </span>
+            <p>{{save.description}}</p>
+
+        </li>
+
+    </ul>
+
+    <div class="clearfix"></div>
+
+
+
+</div>

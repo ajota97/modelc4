@@ -1,0 +1,28 @@
+<!-- <div class="alert alert-danger col-md-6 offset-md-3 mt-3" *ngIf="error">
+    Login failed!!!, verify your credentials.
+</div> -->
+
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+    <h1>Login</h1>
+    <div class="inset">
+        <p>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" #name="ngModel" [(ngModel)]="joinroom.name">
+            <!-- <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">
+                El email no es válido.
+                </small> -->
+        </p>
+        <p>
+            <label for="codigo">Codigo</label>
+            <input type="text" name="codigo" id="codigo" #codigo="ngModel" [(ngModel)]="joinroom.codigo" required>
+            <!-- <small *ngIf="!fullname.valid && fullname.touched" class="invalid-feedback d-block">
+                El nombre es necesario.
+                </small> -->
+        </p>
+
+    </div>
+    <p class="p-container">
+        <button class="btn btn-info" type="submit" style="color: white;" [disabled]="loginForm.invalid">Inivitado</button>
+        <button class="btn btn-danger" [routerLink]="['/register']" style="color: rgb(54, 47, 47); margin-left: 5px;"> Register</button>
+    </p>
+</form>
