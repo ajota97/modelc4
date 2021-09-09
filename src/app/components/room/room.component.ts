@@ -11,7 +11,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class RoomComponent implements OnInit {
   
-   room:any
+   room:any 
    
   constructor(
     private _route: ActivatedRoute, 

@@ -33,7 +33,7 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {  
     
     this.init();
-   this.reload();
+    this.reload();
     
     this.eventClick();
 
@@ -456,22 +456,9 @@ this._renderer.listen("document", "click", ()=>{
                               figure: "Ellipse",
                               "size": "75 75",
                               fill: "#00AD5F"
-                          }, {
                               
-                          }, {
-                             
-                              figure: "Database",
-                              fill: "lightgray"
-                          }, {
-                             
-                              figure: "Diamond",
-                              fill: "lightskyblue"
-                          }, {
-                             
-                              figure: "Ellipse",
-                              "size": "75 75",
-                              fill: "#CE0620"
-                          }, {
+                          },                              
+                             {
                              
                               figure: "RoundedRectangle",
                               fill: "lightyellow"
